@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {useDispatch, useSelector} from "react-redux";
+import Header from "./components/Header";
+import {Route, Routes} from "react-router-dom";
+import Products from "./pages/Products";
+import Favorites from "./pages/Favorites";
+import Basket from "./pages/Basket";
+
+
+// useSelector
+// use Dispatch
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const dispatch = useDispatch()
+
+
+    return (
+        <div className="App">
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Products/>}/>
+                <Route path="/favorites" element={<Favorites/>}/>
+                <Route path="/basket" element={<Basket/>}/>
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
