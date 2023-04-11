@@ -1,0 +1,9 @@
+#header{
+  .header{
+    &--nav{
+      &:active{
+        color: white;
+      }
+    }
+  }
+}
