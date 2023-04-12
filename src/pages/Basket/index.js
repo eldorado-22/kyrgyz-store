@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import BasketTable from "./BasketTable";
 const Basket = () => {
 
-    const {basket} = useSelector(state => state)
+    const {basket} = useSelector(state => state.basket)
 
     return (
         <div className="container py-10">

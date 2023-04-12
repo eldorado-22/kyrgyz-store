@@ -1,13 +1,13 @@
 import React from 'react';
 import {useSelector} from "react-redux";
-import FavoritesTable from "./FavoritesTable";
+import ProductCard from "../Products/productCard";
 
 const Favorites = () => {
 
-    const {favorites} = useSelector(state => state)
+    const {favorite} = useSelector(state => state.favorite)
 
     return (
-        <div className="container py-10">
+        <div className="container py-10 ">
             <div className="relative shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -20,9 +20,9 @@ const Favorites = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {/*{*/}
-                    {/*    favorites.map(el => <FavoritesTable product={el}/>)*/}
-                    {/*}*/}
+                    {
+                        favorite.map(el => <ProductCard product={el}/>)
+                    }
                     </tbody>
                 </table>
             </div>
